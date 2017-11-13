@@ -9,18 +9,17 @@ process.stdin.on('readable', function() {
           case 'getOSinfo':
             getOSinfo();
             break;
-        	case 'exit':
+            case 'exit':
             console.log(' \n');
-        		process.stdout.write('Quitting app!\n\n');
-        		process.exit();
+                process.stdout.write('Quitting app!\n\n');
+                process.exit();
             break;
-        	default:
-        	  process.stderr.write('Wrong instruction!\n\n');
-        	  break;
+            default:
+              process.stderr.write('Wrong instruction!\n\n');
+              break;
         }
     }
 });
 
 var OSinfo = require('./modules/OSInfo');
 OSinfo.print();
-
